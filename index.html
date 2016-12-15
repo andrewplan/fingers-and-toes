@@ -9,12 +9,21 @@
 </head>
 <body>
     <h1>Fingers and Toes</h1>
-    <p>Please enter a number:</p>
 
-    <input type="text">
-    <input type="submit" onclick="runCounter()">
-    <button>Reset</button>
-    <button>Restart</button>
+    <form
+        action="runCounter()"
+        class="number-input-form"
+    >
+        <p>Please enter a number greater than 0.</p>
+        <input
+            class="number-input-form-number-input-box"
+            type="text"
+        >
+        <input type="submit" onclick="runCounter()">
+    </form>
+
+    <button onclick="resetCounter()">Reset</button>
+    <button onclick="restartCounter()">Restart</button>
 
     <div class="counter-wrapper">
         <h2>Counter</h2>
@@ -22,12 +31,12 @@
     </div>
 
     <div class="fingers-and-toes-container">
-      <div class="fingers-and-toes-container-fingers-word-wrapper">
-          <h2>Fingers</h2>
-      </div>
-      <div class="fingers-and-toes-container-toes-word-wrapper">
-          <h2>Toes</h2>
-      </div>
+        <div class="fingers-and-toes-container-fingers-word-wrapper">
+            <h2>Fingers</h2>
+        </div>
+        <div class="fingers-and-toes-container-toes-word-wrapper">
+            <h2>Toes</h2>
+        </div>
     </div>
 
     <script
