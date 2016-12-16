@@ -1,16 +1,32 @@
 $( document ).ready( () => {
+    let numVal;
+    let numInputForm = $( '.number-input-form' );
     let numInput = $( '.number-input-form-number-input-box' );
-    let numVal = $( '.number-input-form-number-input-box' ).val();
     let startCounterBtn = $( '.start-counter' );
+    let counterWrapper = $( '.counter-wrapper' );
+    let counterLimit = $( '.counter-wrapper-counter-limit' );
+    let counterText = $( '.counter-wrapper-counter-text' );
     let resetCounterBtn = $( '.reset-counter' );
     let restartCounterBtn = $( '.restart-counter' );
-    let fingersWordWrapper = $( '.fingers-and-toes-container-fingers-word-wrapper' );
-    let toesWordWrapper = $( '.fingers-and-toes-container-toes-word-wrapper' );
-    let counterText = $( '.counter-wrapper-counter-text' );
+    let fingerAndToesWrapper = $( '.fingers-and-toes-wrapper' );
+    let fingersWordWrapper = $( '.fingers-and-toes-wrapper-fingers-word-wrapper' );
+    let toesWordWrapper = $( '.fingers-and-toes-wrapper-toes-word-wrapper' );
     let stopCounter = false;
 
-    startCounterBtn.click( () => {
-        return startCounter();
+    numInputForm.submit( () => {
+        event.preventDefault();
+        numVal = Number( $( '.number-input-form-number-input-box' ).val() );
+
+        if ( numVal <= 0 || !Number.isInteger( numVal ) ) {
+            alert( 'Invalid entry!' );
+            return numInput.val( '' );
+        }
+
+        startCounter();
+
+        numInputForm.hide();
+        counterWrapper.show();
+        fingerAndToesWrapper.show();
     } );
 
     resetCounterBtn.click( () => {
@@ -22,6 +38,10 @@ $( document ).ready( () => {
 
         // clear input box
         numInput.val( '' );
+
+        counterWrapper.hide();
+        fingerAndToesWrapper.hide();
+        numInputForm.show();
     } );
 
     restartCounterBtn.click( () => {
@@ -37,12 +57,10 @@ $( document ).ready( () => {
     } );
 
     function startCounter() {
-        event.preventDefault();
         let counter = 0;
-        numVal = $( '.number-input-form-number-input-box' ).val();
+
         // count up incrementally every second
         // stop once the given number is reached
-
         let timer = setInterval( () => {
             if ( counter > numVal || stopCounter ) {
                 clearInterval( timer );
@@ -54,6 +72,8 @@ $( document ).ready( () => {
                 counter++;
             }
         }, 1000 );
+
+        counterLimit.text( numVal );
     }
 
     function resetCounter() {

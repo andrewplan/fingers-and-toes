@@ -7,4 +7,10 @@ h1 {
 .highlighted {
   background-color: yellow; }
 
+.counter-wrapper {
+  display: none; }
+
+.fingers-and-toes-wrapper {
+  display: none; }
+
 /*# sourceMappingURL=styles.css.map */

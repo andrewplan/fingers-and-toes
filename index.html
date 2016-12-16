@@ -10,30 +10,41 @@
 <body>
     <h1>Fingers and Toes</h1>
 
-    <div
+    <form
         class="number-input-form"
     >
-        <p>Please enter a number greater than 0.</p>
+        <p>Please enter an integer greater than 0.</p>
         <input
             class="number-input-form-number-input-box"
             type="text"
         >
-        <button class="start-counter">Start counting</button>
-    </div>
-
-    <button class="reset-counter">Reset</button>
-    <button class="restart-counter">Restart</button>
+        <br />
+        <input
+            class="start-counter"
+            type="submit"
+            value="Start counting"
+        >
+    </form>
 
     <div class="counter-wrapper">
-        <h2>Counter</h2>
-        <p class="counter-wrapper-counter-text">0</p>
+        <p>
+            Counting to:
+            <span class="counter-wrapper-counter-limit"></span>
+        </p>
+
+        <h2 class="counter-wrapper-counter-text">0</h2>
+
+        <div class="counter-options-wrapper">
+            <button class="reset-counter">Reset</button>
+            <button class="restart-counter">Restart</button>
+        </div>
     </div>
 
-    <div class="fingers-and-toes-container">
-        <div class="fingers-and-toes-container-fingers-word-wrapper">
+    <div class="fingers-and-toes-wrapper">
+        <div class="fingers-and-toes-wrapper-fingers-word-wrapper">
             <h2>Fingers</h2>
         </div>
-        <div class="fingers-and-toes-container-toes-word-wrapper">
+        <div class="fingers-and-toes-wrapper-toes-word-wrapper">
             <h2>Toes</h2>
         </div>
     </div>
