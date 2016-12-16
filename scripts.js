@@ -2,8 +2,8 @@ $( document ).ready( () => {
     let numInput = $( '.number-input-form-number-input-box' );
     let numVal = $( '.number-input-form-number-input-box' ).val();
     let startCounterBtn = $( '.start-counter' );
-    let resetCounter = $( '.reset-counter' );
-    let restartCounter = $( '.restart-counter' );
+    let resetCounterBtn = $( '.reset-counter' );
+    let restartCounterBtn = $( '.restart-counter' );
     let fingersWordWrapper = $( '.fingers-and-toes-container-fingers-word-wrapper' );
     let toesWordWrapper = $( '.fingers-and-toes-container-toes-word-wrapper' );
     let counterText = $( '.counter-wrapper-counter-text' );
@@ -13,22 +13,27 @@ $( document ).ready( () => {
         return startCounter();
     } );
 
-    resetCounter.click( () => {
-        // reset counter to 0
-        stopCounter = true;
-        console.log( stopCounter );
-        counterText.text( 0 );
+    resetCounterBtn.click( () => {
+        resetCounter();
+
         // remove highlights from both words
         fingersWordWrapper.removeClass( 'highlighted' );
         toesWordWrapper.removeClass( 'highlighted' );
+
         // clear input box
         numInput.val( '' );
     } );
 
-    restartCounter.click( () => {
+    restartCounterBtn.click( () => {
         // run resetCounter function
-        // run runCounter function with the original user input
-        // if no user input, run runCounter starting at 0
+        resetCounter();
+
+        // remove highlights from both words
+        fingersWordWrapper.removeClass( 'highlighted' );
+        toesWordWrapper.removeClass( 'highlighted' );
+
+        // run startCounter function with the original user input
+        startCounter();
     } );
 
     function startCounter() {
@@ -49,6 +54,12 @@ $( document ).ready( () => {
                 counter++;
             }
         }, 1000 );
+    }
+
+    function resetCounter() {
+        // reset counter to 0
+        stopCounter = true;
+        counterText.text( 0 );
     }
 
     function updateCounterDisplay( savedReference ) {
