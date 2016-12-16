@@ -1,21 +1,114 @@
-h1 {
-    color: blue;
+$accent-color: #c63b4d;
+$default-block-color: #fafafa;
+
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px;
+    background-color: #00A6ED;
 }
 
-.number-input-form {
-    &-number-input-box {
-        border: 1px solid #9e9e9e;
+.nav-bar {
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 1px 1px #9e9e9e;
+
+    &-logo-wrapper {
+        width: 150px;
+        height: auto;
     }
 }
 
-.highlighted {
-    background-color: yellow;
+.all-content-wrapper {
+    padding-top: 8vh;
+
+    .top-content-wrapper {
+        padding: 1.5em;
+        text-align: center;
+        border-radius: 5px;
+        background-color: $default-block-color;
+        box-shadow: 2px 1px 1px #9e9e9e;
+
+        .number-input-form {
+            &-number-input-box {
+                border: 1px solid #9e9e9e;
+                font-size: 1.3em;
+            }
+        }
+
+        .counter-wrapper {
+            display: none;
+            font-size: 1.3em;
+
+            &-counter-limit {
+                color: $accent-color;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .fingers-and-toes-wrapper {
+        display: none;
+        text-align: center;
+
+        h2 {
+            margin: 0;
+        }
+
+        &-fingers-word-wrapper, &-toes-word-wrapper {
+            margin-top: 1.4em;
+            padding: 0.7em;
+            border-radius: 5px;
+            background-color: $default-block-color;
+            box-shadow: 2px 1px 1px #9e9e9e;
+        }
+
+    }
+
+    .highlighted {
+        background-color: $accent-color;
+        color: #FFFFFF;
+        border-radius: 5px;
+    }
+
+    .start-counter, .reset-counter, .restart-counter {
+        margin-top: 1em;
+        padding: 0.5em;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1em;
+        color: #FFFFFF;
+        background-color: $accent-color;
+        border: none;
+        border-radius: 5px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
-.counter-wrapper {
-    display: none;
+@media ( min-device-width: 768px ) {
+    .top-content-wrapper {
+        width: 40vw;
+    }
 }
 
-.fingers-and-toes-wrapper {
-    display: none;
+@media ( min-device-width: 1024px ) {
+    .all-content-wrapper {
+        padding-top: 6vh;
+    }
 }

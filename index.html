@@ -4,49 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900" rel="stylesheet">
   <link rel="stylesheet" href="./styles/styles.css">
   <title>Fingers and Toes</title>
 </head>
 <body>
-    <h1>Fingers and Toes</h1>
-
-    <form
-        class="number-input-form"
-    >
-        <p>Please enter an integer greater than 0.</p>
-        <input
-            class="number-input-form-number-input-box"
-            type="text"
-        >
-        <br />
-        <input
-            class="start-counter"
-            type="submit"
-            value="Start counting"
-        >
-    </form>
-
-    <div class="counter-wrapper">
-        <p>
-            Counting to:
-            <span class="counter-wrapper-counter-limit"></span>
-        </p>
-
-        <h2 class="counter-wrapper-counter-text">0</h2>
-
-        <div class="counter-options-wrapper">
-            <button class="reset-counter">Reset</button>
-            <button class="restart-counter">Restart</button>
+    <nav class="nav-bar">
+        <div class="nav-bar-logo-wrapper">
+            <img src="./assets/imgs/axxess_logo.svg" alt="">
         </div>
-    </div>
+    </nav>
 
-    <div class="fingers-and-toes-wrapper">
-        <div class="fingers-and-toes-wrapper-fingers-word-wrapper">
-            <h2>Fingers</h2>
+    <div class="all-content-wrapper">
+        <div class="top-content-wrapper">
+
+            <h2>Fingers and Toes</h2>
+            <form
+                class="number-input-form"
+            >
+                <p>Please enter an integer <br /> greater than 0.</p>
+                <input
+                    class="number-input-form-number-input-box"
+                    type="text"
+                >
+                <br />
+                <input
+                    class="start-counter"
+                    type="submit"
+                    value="Start counter"
+                >
+            </form>
+
+            <div class="counter-wrapper">
+                <p>
+                    Counting to:
+                    <span class="counter-wrapper-counter-limit"></span>
+                </p>
+
+                <h2 class="counter-wrapper-counter-text">0</h2>
+
+                <div class="counter-options-wrapper">
+                    <button class="reset-counter">Reset</button>
+                    <button class="restart-counter">Restart</button>
+                </div>
+            </div>
+
         </div>
-        <div class="fingers-and-toes-wrapper-toes-word-wrapper">
-            <h2>Toes</h2>
+
+        <div class="fingers-and-toes-wrapper">
+            <div class="fingers-and-toes-wrapper-fingers-word-wrapper">
+                <h2>Fingers</h2>
+            </div>
+            <div class="fingers-and-toes-wrapper-toes-word-wrapper">
+                <h2>Toes</h2>
+            </div>
         </div>
+
     </div>
 
     <script

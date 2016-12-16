@@ -1,5 +1,6 @@
 $( document ).ready( () => {
     let numVal;
+    let timerId;
     let numInputForm = $( '.number-input-form' );
     let numInput = $( '.number-input-form-number-input-box' );
     let startCounterBtn = $( '.start-counter' );
@@ -30,6 +31,7 @@ $( document ).ready( () => {
     } );
 
     resetCounterBtn.click( () => {
+        event.preventDefault();
         resetCounter();
 
         // remove highlights from both words
@@ -45,6 +47,7 @@ $( document ).ready( () => {
     } );
 
     restartCounterBtn.click( () => {
+        event.preventDefault();
         // run resetCounter function
         resetCounter();
 
@@ -53,6 +56,7 @@ $( document ).ready( () => {
         toesWordWrapper.removeClass( 'highlighted' );
 
         // run startCounter function with the original user input
+        stopCounter = false;
         startCounter();
     } );
 
@@ -61,10 +65,9 @@ $( document ).ready( () => {
 
         // count up incrementally every second
         // stop once the given number is reached
-        let timer = setInterval( () => {
-            if ( counter > numVal || stopCounter ) {
-                clearInterval( timer );
-                stopCounter = false;
+        timerId = setInterval( () => {
+            if ( counter > numVal ) {
+                clearInterval( timerId );
             }
             else if ( counter <= numVal ) {
                 updateCounterDisplay( counter );
@@ -78,7 +81,8 @@ $( document ).ready( () => {
 
     function resetCounter() {
         // reset counter to 0
-        stopCounter = true;
+        // stopCounter = true;
+        clearInterval( timerId );
         counterText.text( 0 );
     }
 
